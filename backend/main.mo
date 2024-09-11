@@ -13,7 +13,7 @@ actor {
   type Hunter = {
     id: HunterID;
     name: Text;
-    heelHeight: Nat; // in centimeters
+    heelHeight: Nat; // in inches
   };
 
   type Mission = {

@@ -25,7 +25,7 @@ function displayHunters() {
     huntersList.innerHTML = '';
     hunters.forEach(hunter => {
         const li = document.createElement('li');
-        li.textContent = `${hunter.name} (Heel Height: ${hunter.heelHeight}cm)`;
+        li.textContent = `${hunter.name} (Heel Height: ${hunter.heelHeight} inches)`;
         huntersList.appendChild(li);
     });
 }
