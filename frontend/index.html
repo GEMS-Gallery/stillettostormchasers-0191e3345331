@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hurricane Hunters in Heels</title>
+    <link rel="stylesheet" href="src/index.css">
+</head>
+<body>
+    <header>
+        <h1>Hurricane Hunters in Heels</h1>
+    </header>
+    <main>
+        <section id="add-hunter">
+            <h2>Add New Hunter</h2>
+            <form id="hunter-form">
+                <input type="text" id="hunter-name" placeholder="Hunter Name" required>
+                <input type="number" id="heel-height" placeholder="Heel Height (cm)" required>
+                <button type="submit">Add Hunter</button>
+            </form>
+        </section>
+        <section id="add-mission">
+            <h2>Add New Mission</h2>
+            <form id="mission-form">
+                <select id="hunter-select" required>
+                    <option value="">Select Hunter</option>
+                </select>
+                <input type="text" id="hurricane-name" placeholder="Hurricane Name" required>
+                <input type="date" id="mission-date" required>
+                <button type="submit">Add Mission</button>
+            </form>
+        </section>
+        <section id="hunters-list">
+            <h2>Hurricane Hunters</h2>
+            <ul id="hunters"></ul>
+        </section>
+        <section id="missions-list">
+            <h2>Missions</h2>
+            <ul id="missions"></ul>
+        </section>
+    </main>
+    <script type="module" src="src/app.js"></script>
+</body>
+</html>

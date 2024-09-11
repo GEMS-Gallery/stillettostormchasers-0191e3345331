@@ -1,0 +1,21 @@
+type Mission = 
+ record {
+   date: text;
+   hunterID: HunterID;
+   hurricaneName: text;
+   id: nat;
+ };
+type HunterID = nat;
+type Hunter = 
+ record {
+   heelHeight: nat;
+   id: HunterID;
+   name: text;
+ };
+service : {
+  addHunter: (text, nat) -> (HunterID);
+  addMission: (HunterID, text, text) -> (opt nat);
+  getAllHunters: () -> (vec Hunter) query;
+  getAllMissions: () -> (vec Mission) query;
+  getMissionsForHunter: (HunterID) -> (vec Mission) query;
+}
