@@ -3,6 +3,7 @@ export const idlFactory = ({ IDL }) => {
   const Hunter = IDL.Record({
     'id' : HunterID,
     'name' : IDL.Text,
+    'imageUrl' : IDL.Text,
     'heelHeight' : IDL.Nat,
   });
   const Mission = IDL.Record({

@@ -5,6 +5,7 @@ import type { IDL } from '@dfinity/candid';
 export interface Hunter {
   'id' : HunterID,
   'name' : string,
+  'imageUrl' : string,
   'heelHeight' : bigint,
 }
 export type HunterID = bigint;

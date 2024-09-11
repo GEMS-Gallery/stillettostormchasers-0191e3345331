@@ -25,7 +25,13 @@ function displayHunters() {
     huntersList.innerHTML = '';
     hunters.forEach(hunter => {
         const li = document.createElement('li');
-        li.textContent = `${hunter.name} (Heel Height: ${hunter.heelHeight} inches)`;
+        const img = document.createElement('img');
+        img.src = hunter.imageUrl;
+        img.alt = `${hunter.name} in heels`;
+        li.appendChild(img);
+        const info = document.createElement('span');
+        info.textContent = `${hunter.name} (Heel Height: ${hunter.heelHeight} inches)`;
+        li.appendChild(info);
         huntersList.appendChild(li);
     });
 }
@@ -36,7 +42,15 @@ function displayMissions() {
     missions.forEach(mission => {
         const hunter = hunters.find(h => h.id === mission.hunterID);
         const li = document.createElement('li');
-        li.textContent = `${hunter ? hunter.name : 'Unknown Hunter'} - Hurricane ${mission.hurricaneName} (${mission.date})`;
+        if (hunter) {
+            const img = document.createElement('img');
+            img.src = hunter.imageUrl;
+            img.alt = `${hunter.name} in heels`;
+            li.appendChild(img);
+        }
+        const info = document.createElement('span');
+        info.textContent = `${hunter ? hunter.name : 'Unknown Hunter'} - Hurricane ${mission.hurricaneName} (${mission.date})`;
+        li.appendChild(info);
         missionsList.appendChild(li);
     });
 }

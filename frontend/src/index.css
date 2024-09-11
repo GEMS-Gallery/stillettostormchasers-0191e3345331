@@ -56,4 +56,14 @@ li {
     margin-bottom: 0.5rem;
     padding: 0.5rem;
     border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 3px;
 }

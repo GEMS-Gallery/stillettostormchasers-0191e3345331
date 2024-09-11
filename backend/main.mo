@@ -1,11 +1,11 @@
 import Bool "mo:base/Bool";
-import Text "mo:base/Text";
 
 import Array "mo:base/Array";
 import Debug "mo:base/Debug";
 import Iter "mo:base/Iter";
 import Nat "mo:base/Nat";
 import Option "mo:base/Option";
+import Text "mo:base/Text";
 
 actor {
   // Define types
@@ -14,6 +14,7 @@ actor {
     id: HunterID;
     name: Text;
     heelHeight: Nat; // in inches
+    imageUrl: Text;
   };
 
   type Mission = {
@@ -29,14 +30,23 @@ actor {
   stable var nextHunterID : Nat = 0;
   stable var nextMissionID : Nat = 0;
 
+  // Generate image URL (placeholder function)
+  func generateImageUrl(name: Text, heelHeight: Nat) : Text {
+    // In a real implementation, this would call an external API
+    // For now, we'll return a placeholder URL
+    "https://example.com/generated-image/" # name # "-" # Nat.toText(heelHeight) # ".jpg"
+  };
+
   // Add a new hunter
   public func addHunter(name : Text, heelHeight : Nat) : async HunterID {
     let id = nextHunterID;
     nextHunterID += 1;
+    let imageUrl = generateImageUrl(name, heelHeight);
     let newHunter : Hunter = {
       id = id;
       name = name;
       heelHeight = heelHeight;
+      imageUrl = imageUrl;
     };
     hunters := Array.append(hunters, [newHunter]);
     id

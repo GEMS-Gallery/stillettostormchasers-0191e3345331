@@ -10,6 +10,7 @@ type Hunter =
  record {
    heelHeight: nat;
    id: HunterID;
+   imageUrl: text;
    name: text;
  };
 service : {
